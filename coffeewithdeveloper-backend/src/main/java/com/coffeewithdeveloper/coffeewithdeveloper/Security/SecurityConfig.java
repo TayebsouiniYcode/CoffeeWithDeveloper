@@ -38,11 +38,11 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(
                         autorize -> autorize
-                                .requestMatchers("/auth/**", "/auth/**")
+                                .requestMatchers("/auth/**")
                                 .permitAll()
                 )
                 .authorizeHttpRequests(authorize -> authorize
-                    .anyRequest().permitAll()
+                    .requestMatchers("/api/**").permitAll()
                 )
                 .sessionManagement(sessionManagement ->
                         sessionManagement

@@ -33,7 +33,6 @@ public class AuthController {
                 authenticationManager.authenticate(
                         new UsernamePasswordAuthenticationToken(authRequestDTO.getEmail(),
                                 authRequestDTO.getPassword()));
-
         if(authentication.isAuthenticated()){
             return JwtResponseDTO.builder()
                     .accessToken(jwtService.GenerateToken(authRequestDTO.getEmail())).build();

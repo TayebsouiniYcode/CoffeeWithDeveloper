@@ -6,12 +6,19 @@ import com.coffeewithdeveloper.coffeewithdeveloper.Entities.User;
 import com.coffeewithdeveloper.coffeewithdeveloper.Repositories.RoleRepository;
 import com.coffeewithdeveloper.coffeewithdeveloper.Repositories.UserRepository;
 import com.coffeewithdeveloper.coffeewithdeveloper.Services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+
+import java.beans.Encoder;
 
 @Component
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository) {
         this.userRepository = userRepository;
@@ -31,7 +38,7 @@ public class UserServiceImpl implements UserService {
                             user.setFirstname ( registerRequestDTO.getFirstname () );
                             user.setLastname ( registerRequestDTO.getLastname () );
                             user.setEmail ( registerRequestDTO.getEmail () );
-                            user.setPassword ( registerRequestDTO.getPassword () );
+                            user.setPassword (passwordEncoder.encode(registerRequestDTO.getPassword()));
                             user.setPhone ( registerRequestDTO.getPhone () );
 
                             Role role = getRoleByName ( "ROLE_USER" );

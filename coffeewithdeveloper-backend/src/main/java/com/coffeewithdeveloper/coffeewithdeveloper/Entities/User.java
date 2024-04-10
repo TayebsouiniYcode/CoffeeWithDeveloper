@@ -3,6 +3,7 @@ package com.coffeewithdeveloper.coffeewithdeveloper.Entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Collection;
 
 @Entity
@@ -105,7 +106,7 @@ public class User {
     }
 
     @ManyToMany
-    private Collection<Role> Roles;
+    private Collection<Role> Roles = new ArrayList<Role>();
 
     public Collection<Role> getRoles() {
         return Roles;

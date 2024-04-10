@@ -33,7 +33,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             logger.error("Username not found: " + email);
             throw new UsernameNotFoundException("could not found user..!!");
         }
-        logger.info("User Authenticated Successfully..!!!");
+        logger.info("User Authenticated Successfully..!!!" + user.toString());
         return new CustomUserDetails(user);
     }
 }
