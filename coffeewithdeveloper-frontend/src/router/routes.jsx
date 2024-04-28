@@ -3,6 +3,7 @@ import {createBrowserRouter} from "react-router-dom";
 import FullLayout from "../components/layouts/FullLayout";
 import Login from "../pages/login";
 import Home from "../pages/Home";
+import DashboardLayout from "../components/layouts/DashboardLayout";
 
 export const router = createBrowserRouter( [
     {
@@ -23,6 +24,15 @@ export const router = createBrowserRouter( [
             {
                 path: "/",
                 element: <Home />
+            }
+        ]
+    },
+    {
+        element: <DashboardLayout />,
+        children : [
+            {
+                path: "/dashboard",
+                element: <div>Test</div>
             }
         ]
     }
