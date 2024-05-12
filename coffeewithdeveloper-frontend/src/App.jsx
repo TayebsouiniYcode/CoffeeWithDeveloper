@@ -12,9 +12,11 @@ export default function App() {
         <Router>
             <UserProvider>
                 <Routes>
+                    <Route>
+                        <Route path="/login" element={<Login />}></Route>
+                    </Route>
                     <Route element={<FullLayout />}    >
                         <Route path="/" element={<Home />}></Route>
-                        <Route path="/login" element={ <Login />}></Route>
                     </Route>
                     <Route element={<DashboardLayout />} >
                         <Route path="/dashboard" element={<Dashboard />}></Route>
