@@ -1,14 +1,28 @@
 import * as React from "react";
-import { router } from "./router/routes.jsx";
-
-import {
-    RouterProvider,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
+import { UserProvider } from "./hooks/UserContext";
+import FullLayout from "./components/layouts/FullLayout";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Dashboard from "./pages/backoffice/dashboard";
+import DashboardLayout from "./components/layouts/DashboardLayout";
 
 export default function App() {
     return (
-        <>
-            <RouterProvider router={router} />
-        </>
+        <Router>
+            <UserProvider>
+                <Routes>
+                    <Route>
+                        <Route path="/login" element={<Login />}></Route>
+                    </Route>
+                    <Route element={<FullLayout />}    >
+                        <Route path="/" element={<Home />}></Route>
+                    </Route>
+                    <Route element={<DashboardLayout />} >
+                        <Route path="/dashboard" element={<Dashboard />}></Route>
+                    </Route>
+                </Routes>
+            </UserProvider>
+        </Router>
     );
 }
