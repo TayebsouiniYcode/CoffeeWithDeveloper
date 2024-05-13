@@ -1,10 +1,10 @@
 import React from "react";
-import FullLayout from "../components/layouts/FullLayout";
+import HeroSection from "../components/herosection/HeroSection";
 
 export default function Home() {
     return (
         <>
-            <h1> This is home page</h1>
+            <HeroSection />
         </>
     )
 }

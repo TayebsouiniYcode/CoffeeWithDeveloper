@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "../../utils/Image";
 
 
 const HorizontalNavigationBar = () => {
@@ -16,13 +17,13 @@ const HorizontalNavigationBar = () => {
                     </svg>
                 </div>
                 <div class="relative">
-                    <img src="../../../assets/images/profil.jpg" alt="Profile" class="w-10 h-10 rounded-full cursor-pointer" />
+                    <Image path="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Profile" className="w-10 h-10 rounded-full cursor-pointer" />
                         <div class="absolute top-full right-0 mt-2 w-48 bg-white border rounded-md shadow-lg hidden">
-                            <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Profile</a>
-                            <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Settings</a>
-                            <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Logout</a>
+                            <a href="/" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Profile</a>
+                            <a href="/" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Settings</a>
+                            <a href="/" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Logout</a>
                         </div>
-                </div>      
+                </div>    
             </nav>
 
 
